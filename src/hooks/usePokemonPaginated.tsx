@@ -19,7 +19,7 @@ export const usePokemonPaginated = () => {
 
       const urlParts = url.split('/');
       const id = urlParts[urlParts.length - 2]
-      const picture = `raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`
+      const picture = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`
       return { name, id, picture }
     })
     setSimplePokemonList([...simplePokemonList, ...newPokemonList]);
@@ -32,7 +32,8 @@ export const usePokemonPaginated = () => {
 
   return {
     simplePokemonList,
-    isLoading
+    isLoading,
+    loadPokemons
   };
 
 }
