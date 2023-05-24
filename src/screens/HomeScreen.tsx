@@ -1,14 +1,23 @@
 import React from 'react'
-import { Text, TouchableOpacity, View } from 'react-native'
+import { Image, Text } from 'react-native'
+import { styles } from '../theme/appTheme'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
+import { usePokemonPaginated } from '../hooks/usePokemonPaginated'
 
-const HomeScreen = ({ navigation }: any) => {
+const HomeScreen = () => {
+
+  const { top } = useSafeAreaInsets();
+  usePokemonPaginated();
   return (
-    <View>
-      <Text>HomeScreen</Text>
-      <TouchableOpacity onPress={() => navigation.navigate('Pokemon')}>
-        <Text>Go to Pokémon</Text>
-      </TouchableOpacity>
-    </View>
+    <>
+      <Image
+        source={require('../assets/pokeball.png')}
+        style={styles.pokeballBG}
+      />
+      <Text style={
+        [styles.title, styles.globalMargin, { top: top + 20 }]
+      } >Pokédex</Text>
+    </>
   )
 }
 
