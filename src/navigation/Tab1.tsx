@@ -11,7 +11,7 @@ export type RootStackParams = {
 
 const Stack = createNativeStackNavigator<RootStackParams>();
 
-const Navigator = () => {
+const Tab1 = () => {
   return (
     <Stack.Navigator
       initialRouteName="HomeScreen"
@@ -25,4 +25,4 @@ const Navigator = () => {
   );
 }
 
-export default Navigator;
+export default Tab1;
